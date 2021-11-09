@@ -13,7 +13,7 @@ we can create multiple instance of console application as our chat UI and we can
 
 ## Chat Architecture Diagram
 
-![](.\assets\diagram.png)
+![](./assets/diagram.png)
 
 In above diagram I show how our components connect together for running this chat application. Here we have two console application or two instance of console application as our Chat UI, one NATS message broker and one API service for get and post some data.
 
