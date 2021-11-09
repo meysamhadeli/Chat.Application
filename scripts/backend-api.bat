@@ -1,0 +1,1 @@
+dotnet run --project src/Chat.Api/Chat.Api.csproj
