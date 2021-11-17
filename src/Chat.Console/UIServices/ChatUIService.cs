@@ -22,6 +22,7 @@ namespace Chat.Console
 
             if (result != null)
             {
+                //Print history of messages from sender and receiver not received.
                 foreach (var chatMessageDto in result)
                 {
                     if (chatMessageDto.Sender == userName)

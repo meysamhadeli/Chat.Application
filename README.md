@@ -3,7 +3,7 @@
 ## How To Run
 For running Nats message broker in your system you can use of this [docker compose](./deploys/compose/docker-compose.yaml) file.
 
-For running our system we need to run our [Console Application](./src/Chat.Console) as client and [API](./src/Chat.Api) as a service. we can use bellow command in our shell to running our clients and api. Our api will up and running on this `http://localhost:8000` address.
+For running our system we need to run our [Console Application](./src/Chat.Console) as client and [API](./src/Chat.Api) as a service. we can use bellow command in root of project with shell to running our clients and api. Our api will up and running on this `http://localhost:8000` address.
 
 ``` cmd
 .\scripts\backend-api.bat

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Chat.Core.Dtos;
 using Chat.Core.Features.Chat.LoadMessagesByCount;
-using Chat.Core.Features.Chat.LoadMessagesByTime;
 using Chat.Core.Features.Chat.LoadReceivedMessages;
 using Chat.Core.Features.Chat.SendMessage;
 using MediatR;
@@ -39,19 +38,12 @@ namespace Chat.Api.Chat
             return Ok(messages);
         }
 
-        [HttpGet("load-messages-by-time/{userName}")]
-        public async Task<ActionResult<IEnumerable<ChatMessageDto>>> LoadByMessagesByTimes([FromRoute] string userName,
-            [FromQuery] DateTime dateTime)
-        {
-            var messages = await _mediator.Send(new LoadMessageByTimeQuery(userName, dateTime));
-
-            return Ok(messages);
-        }
 
         [HttpGet("received-messages/{userName}")]
-        public async Task<ActionResult<IEnumerable<ChatMessageDto>>> LoadByMessagesByTimes([FromRoute] string userName)
+        public async Task<ActionResult<IEnumerable<ChatMessageDto>>> LoadByMessagesByTimes([FromRoute] string userName,
+            [FromQuery] DateTime? dateTime)
         {
-            var messages = await _mediator.Send(new LoadReceivedMessagesQuery(userName));
+            var messages = await _mediator.Send(new LoadReceivedMessagesQuery(userName, dateTime));
 
             return Ok(messages);
         }
