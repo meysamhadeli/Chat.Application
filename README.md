@@ -23,3 +23,6 @@ The flow of our application is like this:
 - Our API endpoint will get posted message from the client and process and save this message in a in-memory storage (EF-Core In-memory) and then publish this message as a event to our NATS message broker. This message contain needed information for our subscribers for example `sender` , `receiver`, `message` and our subscribers can pick their needed information from theses events.
 
 - Our second console application (instance 2) as Chat UI, that is subscribed to that event through our NATS message broker, receives this message from the broker and will show on the console.
+
+## License
+This project is made available under the MIT license. See [LICENSE](https://github.com/meysamhadeli/Chat.Application/blob/main/LICENSE) for details.
