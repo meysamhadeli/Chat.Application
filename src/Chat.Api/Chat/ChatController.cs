@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Chat.Core.Dtos;
+using Chat.Core.Features.Chat.CreateRooms;
 using Chat.Core.Features.Chat.LoadMessagesByCount;
 using Chat.Core.Features.Chat.LoadReceivedMessages;
 using Chat.Core.Features.Chat.SendMessage;
@@ -26,6 +27,13 @@ namespace Chat.Api.Chat
         {
             var id = await _mediator.Send(command);
 
+            return Ok(id);
+        }
+
+        [HttpPost("create-room")]
+        public async Task<IActionResult> CreateRoomAsync(CreateRoomCommand command)
+        {
+            var id = await _mediator.Send(command);
             return Ok(id);
         }
 
